@@ -1,0 +1,4 @@
+wordpress:
+  path: /var/www/html
+  url: http://localhost:8000
+  user: admin

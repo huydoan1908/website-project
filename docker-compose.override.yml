@@ -1,0 +1,5 @@
+services:
+  # phpMyAdmin additional settings
+  phpmyadmin:
+    environment:
+      UPLOAD_LIMIT: 64M

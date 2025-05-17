@@ -1,0 +1,62 @@
+services:
+  # Database
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db-dumps:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"  # Expose MySQL port to host
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    networks:
+      - wpsite
+  # WordPress
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    ports:
+      - "8000:80"
+    restart: always
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+      - ./custom-plugins:/var/www/html/wp-content/plugins/custom-plugins
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - ./wp-config-local.php:/var/www/html/wp-config-local.php
+    environment:
+      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+      WORDPRESS_DEBUG: 'true'
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_DEBUG', true);
+        define('WP_DEBUG_LOG', true);
+        define('WP_DEBUG_DISPLAY', false);
+        define('SCRIPT_DEBUG', true);
+    networks:
+      - wpsite
+  # phpMyAdmin
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '8080:80'
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: rootpassword
+    networks:
+      - wpsite
+
+networks:
+  wpsite:
+
+volumes:
+  db_data:
