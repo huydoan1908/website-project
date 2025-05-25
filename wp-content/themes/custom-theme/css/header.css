@@ -1,0 +1,194 @@
+/* Header Styles */
+
+/* Body Spacing for Fixed Header */
+body {
+    padding-top: 80px; /* Height of the header */
+}
+
+/* Header Base Styles */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Fixed height for header */
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+/* Site Branding */
+.site-branding {
+    display: flex;
+    align-items: center;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.site-title a {
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Navigation */
+.site-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.primary-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.primary-menu li {
+    margin-left: 40px;
+    position: relative;
+}
+
+.primary-menu a {
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.primary-menu a:hover {
+    color: #666;
+}
+
+/* Menu Toggle */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Hide any WordPress-generated menu toggles inside navigation */
+.site-navigation .menu-toggle,
+.site-navigation button {
+    display: none !important;
+}
+
+/* Ensure our custom menu toggle is visible */
+.header-container > .menu-toggle {
+    display: none;
+}
+
+/* Admin Bar Adjustments */
+.admin-bar .site-header {
+    top: 32px;
+}
+
+body.admin-bar {
+    padding-top: 112px; /* 80px header + 32px admin bar */
+}
+
+/* Header Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .header-container {
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 60px; /* Smaller header on mobile */
+    }
+    
+    .site-header {
+        height: 60px;
+    }
+
+    .header-container {
+        padding: 0 20px;
+    }
+
+    .header-container > .menu-toggle {
+        display: block !important;
+    }
+    
+    /* Hide any other menu toggles */
+    .site-navigation .menu-toggle,
+    .site-navigation button {
+        display: none !important;
+    }
+
+    .menu-toggle {
+        display: block; /* Show the menu toggle on mobile */
+    }
+
+    .site-navigation {
+        position: fixed;
+        top: 60px; /* Match header height */
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background-color: #fff;
+        transition: left 0.3s ease;
+        padding: 20px;
+        overflow-y: auto;
+        z-index: 999;
+    }
+
+    body.admin-bar .site-navigation {
+        height: calc(100vh - 106px); /* Account for admin bar */
+        top: 106px;
+    }
+
+    .site-navigation.active {
+        left: 0;
+    }
+
+    .primary-menu {
+        flex-direction: column;
+    }
+
+    .primary-menu li {
+        margin: 0 0 20px 0;
+    }
+
+    .primary-menu a {
+        font-size: 18px;
+        display: block;
+        padding: 10px 0;
+    }
+}
+
+@media screen and (max-width: 782px) {
+    .admin-bar .site-header {
+        top: 46px;
+    }
+    
+    body.admin-bar {
+        padding-top: 126px; /* 80px header + 46px admin bar */
+    }
+}
