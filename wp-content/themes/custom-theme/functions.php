@@ -56,7 +56,10 @@ add_action('after_setup_theme', 'custom_theme_setup');
  * Enqueue scripts and styles.
  */
 function custom_theme_scripts() {
-    wp_enqueue_style('custom-theme-style', get_stylesheet_uri());
+    wp_enqueue_style('custom-theme-style', get_template_directory_uri() . '/css/style.css');
+    wp_enqueue_style('custom-theme-header', get_template_directory_uri() . '/css/header.css');
+    wp_enqueue_style('custom-theme-footer', get_template_directory_uri() . '/css/footer.css');
+    wp_enqueue_style('dashicons');
     
     wp_enqueue_script('custom-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
 
@@ -78,6 +81,27 @@ function custom_theme_widgets_init() {
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
+    ));
+
+    // Register footer widget areas
+    register_sidebar(array(
+        'name'          => esc_html__('Footer 1', 'custom-theme'),
+        'id'            => 'footer-1',
+        'description'   => esc_html__('Add widgets for footer area 1.', 'custom-theme'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
+
+    register_sidebar(array(
+        'name'          => esc_html__('Footer 2', 'custom-theme'),
+        'id'            => 'footer-2',
+        'description'   => esc_html__('Add widgets for footer area 2.', 'custom-theme'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
     ));
 }
 add_action('widgets_init', 'custom_theme_widgets_init');
