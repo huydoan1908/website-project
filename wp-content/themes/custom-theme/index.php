@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <main id="main" class="site-main">
+    <div class="container">
     <?php
     if (have_posts()) :
         while (have_posts()) :
@@ -38,6 +39,7 @@
         <?php
     endif;
     ?>
+    </div>
 </main>
 
 <?php get_footer(); ?>
