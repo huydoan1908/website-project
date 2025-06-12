@@ -80,7 +80,6 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
 }
 
 .container {
@@ -88,4 +87,14 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+}
+
+.wp-block-heading {
+    margin-bottom: 20px;
+}
+
+.wp-block-image img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
 }

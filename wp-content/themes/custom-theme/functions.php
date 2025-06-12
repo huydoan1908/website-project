@@ -83,21 +83,10 @@ function custom_theme_widgets_init() {
         'after_title'   => '</h2>',
     ));
 
-    // Register footer widget areas
     register_sidebar(array(
-        'name'          => esc_html__('Footer 1', 'custom-theme'),
-        'id'            => 'footer-1',
-        'description'   => esc_html__('Add widgets for footer area 1.', 'custom-theme'),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ));
-
-    register_sidebar(array(
-        'name'          => esc_html__('Footer 2', 'custom-theme'),
-        'id'            => 'footer-2',
-        'description'   => esc_html__('Add widgets for footer area 2.', 'custom-theme'),
+        'name'          => esc_html__('Footer', 'custom-theme'),
+        'id'            => 'footer',
+        'description'   => esc_html__('Add widgets for footer area', 'custom-theme'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
