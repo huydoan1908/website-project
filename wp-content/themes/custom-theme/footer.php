@@ -13,10 +13,6 @@
                     <?php endif; ?>
                 </div>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. <?php _e('All Rights Reserved.', 'custom-theme'); ?></p>
-            </div>
         </div>
     </footer>
 

@@ -19,7 +19,7 @@
 
 /* Footer Sections */
 .footer-section h3 {
-    color: #fff;
+    color: var(--light-color);
     font-size: 18px;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -29,14 +29,14 @@
 .footer-section p,
 .footer-section a {
     text-align: center;
-    color: #999;
+    color: var(--muted-color);
     text-decoration: none;
     line-height: 1.6;
     margin-bottom: 10px;
 }
 
 .footer-section a:hover {
-    color: #fff;
+    text-decoration: underline;
 }
 
 /* Social Links */
@@ -46,13 +46,13 @@
 }
 
 .social-links a {
-    color: #fff;
+    color: var(--light-color);
     font-size: 20px;
-    transition: color 0.3s ease;
+    transition: var(--transition);
 }
 
 .social-links a:hover {
-    color: #999;
+    color: var(--muted-color);
 }
 
 /* Footer Bottom */
@@ -60,7 +60,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 30px;
     text-align: center;
-    color: #999;
+    color: var(--muted-color);
     font-size: 14px;
 }
 

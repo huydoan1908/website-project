@@ -3,9 +3,22 @@ Theme Name: Custom Theme
 Theme URI: http://example.com/custom-theme/
 Author: Your Name
 Author URI: http://example.com/
-Description: A simple custom WordPress theme.
-Version: 1.0
+Description: A simple custom WordPress theme with modular CSS architecture.
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: custom-theme
 */
+
+/* 
+ * Modular CSS Architecture
+ * This theme uses a modular approach with separate CSS files for:
+ * - variables.css: CSS custom properties and design tokens
+ * - reset.css: CSS reset and base styles
+ * - components.css: Shared/reusable components
+ * - header.css: Header-specific styles
+ * - footer.css: Footer-specific styles
+ * - hero.css: Hero section styles
+ * - front-page.css: Front page specific styles
+ * - projects.css: Projects page specific styles
+ */

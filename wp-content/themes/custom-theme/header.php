@@ -9,8 +9,8 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-    <header class="site-header">
+<?php wp_body_open(); ?>    
+<header class="site-header transparent-header">
         <div class="header-container">
             <div class="site-branding">
                 <?php if (has_custom_logo()): ?>
@@ -44,4 +44,4 @@
         </div>
     </header>
 
-    <div class="content-area py-5">
+    <div class="content-area">

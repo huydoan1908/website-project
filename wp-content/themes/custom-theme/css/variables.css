@@ -1,0 +1,46 @@
+/* CSS Variables and Root Styles */
+:root {
+    /* Colors */
+    --main-color: #000;
+    --accent-color: #333;
+    --light-color: #fff;
+    --text-color: #333;
+    --muted-color: #666;
+    --border-color: #e5e5e5;
+    --background-light: #f9f9f9;
+    
+    /* Transitions */
+    --transition: all 0.3s ease;
+    --transition-slow: all 0.5s ease;
+    
+    /* Spacing */
+    --text-spacing: 0.25em;
+    --section-spacing: 6rem;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
+    
+    /* Typography */
+    --font-size-small: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-large: 1.2rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 2.5rem;
+    --font-size-4xl: 3rem;
+    
+    /* Layout */
+    --container-max-width: 1200px;
+    --header-height: 80px;
+    --header-height-mobile: 60px;
+    
+    /* Border radius */
+    --border-radius: 2px;
+    
+    /* Shadows */
+    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 15px rgba(0, 0, 0, 0.3);
+    --shadow-heavy: 0 8px 25px rgba(0, 0, 0, 0.3);
+}

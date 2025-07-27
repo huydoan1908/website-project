@@ -1,13 +1,14 @@
 <?php get_header(); ?>
 
 <main id="main" class="site-main">
+    <?php get_template_part('partials/banner'); ?>
     <div class="container">
     <?php
     if (have_posts()) :
         while (have_posts()) :
             the_post();
             ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <article class="py-5" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
                 <div class="entry-content">
                     <?php

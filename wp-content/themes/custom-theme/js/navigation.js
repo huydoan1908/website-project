@@ -31,5 +31,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 header.classList.remove('scrolled');
             }
         });
+        
+        // Trigger once on page load to handle refresh on scrolled position
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        }
     }
+    
+    // Add animation to grid items on front page
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+    
+    document.querySelectorAll('.grid-item').forEach(item => {
+        observer.observe(item);
+    });
+    
+    document.querySelectorAll('.section-title').forEach(title => {
+        observer.observe(title);
+        title.classList.add('slide-up');
+    });
 });

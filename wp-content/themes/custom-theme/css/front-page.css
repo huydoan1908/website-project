@@ -1,0 +1,76 @@
+/* Front Page Specific Styles */
+/* Portfolio Grid */
+.portfolio-grid {
+    padding: var(--section-spacing) var(--spacing-sm);
+}
+
+.portfolio-grid .section-title {
+    text-align: center;
+}
+
+/* Studio Section */
+.studio-section {
+    padding: var(--section-spacing) var(--spacing-md);
+    background-color: var(--background-light);
+    text-align: center;
+}
+
+.studio-description {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+    font-size: var(--font-size-large);
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: var(--section-spacing) var(--spacing-md);
+    text-align: center;
+    background-color: var(--main-color);
+    color: var(--light-color);
+}
+
+.contact-section .section-title {
+    color: var(--light-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-section .section-title::after {
+    background: var(--light-color);
+}
+
+.contact-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--light-color);
+    color: var(--light-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: var(--text-spacing);
+    font-size: var(--font-size-base);
+    transition: var(--transition);
+}
+
+.contact-btn:hover {
+    background-color: var(--light-color);
+    color: var(--main-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .hero-tagline {
+        font-size: var(--font-size-large);
+    }
+    
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .section-title {
+        font-size: var(--font-size-xl);
+    }
+}
