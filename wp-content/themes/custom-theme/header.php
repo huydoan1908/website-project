@@ -13,15 +13,19 @@
 <header class="site-header transparent-header">
         <div class="header-container">
             <div class="site-branding">
-                <?php if (has_custom_logo()): ?>
-                    <?php the_custom_logo(); ?>
-                <?php else: ?>
-                    <h1 class="site-title">
-                        <a href="<?php echo esc_url(home_url('/')); ?>">
-                            <?php bloginfo('name'); ?>
-                        </a>
-                    </h1>
-                <?php endif; ?>
+                <h1 class="site-title">
+                    <a href="<?php echo esc_url(home_url('/')); ?>">
+                    <?php
+                        $custom_logo_id = get_theme_mod('custom_logo');
+                        $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
+                        if ($logo) {
+                            echo '<img src="' . esc_url($logo[0]) . '" alt="' . get_bloginfo('name') . '" height="30">';
+                        }
+                    ?>
+
+                        <?php bloginfo('name'); ?>
+                    </a>
+                </h1>
             </div>
 
             <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">

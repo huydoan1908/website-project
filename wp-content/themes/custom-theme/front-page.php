@@ -76,7 +76,12 @@ get_header();
             <div class="studio-description">
                 <p><?php echo pll_translate('Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias sit ipsum qui, unde ducimus vero similique rem tempora, nesciunt ipsam, mollitia quis consectetur sequi dolorum est illum doloribus quae suscipit!'); ?></p>
             </div>
-            <a href="/about-us" class="read-more" style="color: #000; border-color: #000;"><?php echo pll_translate('Xem thêm'); ?></a>
+            <?php 
+            $about_page = get_page_by_path('about-us');
+            $about_url = $about_page ? pll_get_post($about_page->ID) : null;
+            $about_link = $about_url ? get_permalink($about_url) : pll_home_url() . '/about-us';
+            ?>
+            <a href="<?php echo $about_link; ?>" class="read-more" style="color: #000; border-color: #000;"><?php echo pll_translate('Xem thêm'); ?></a>
         </div>
     </section>
 
@@ -85,7 +90,12 @@ get_header();
         <div class="container">
             <h2 class="section-title"><?php echo pll_translate('Liên hệ'); ?></h2>
             <p style="margin-bottom: 2rem;"><?php echo pll_translate('Liên hệ với chúng tôi và cho chúng tôi biết về dự án của bạn.'); ?></p>
-            <a href="/contact" class="contact-btn"><?php echo pll_translate('Liên hệ ngay'); ?></a>   
+            <?php 
+            $contact_page = get_page_by_path('contact-us');
+            $contact_url = $contact_page ? pll_get_post($contact_page->ID) : null;
+            $contact_link = $contact_url ? get_permalink($contact_url) : pll_home_url() . '/contact';
+            ?>
+            <a href="<?php echo $contact_link; ?>" class="contact-btn"><?php echo pll_translate('Liên hệ ngay'); ?></a>   
         </div>
      </section>
 </main>

@@ -1,7 +1,8 @@
 <?php
-$banner_image = get_field('banner_image');
-$banner_content = get_field('banner_content');
+$banner_image = get_field('banner_image') ? get_field('banner_image') : [];
+$banner_content = get_field('banner_content') ? get_field('banner_content') : [];
 ?>
+<?php if (!empty($banner_image['desktop']) || !empty($banner_image['mobile'])) : ?>
 <section class="hero-section">
     <picture class="hero-background">
         <source srcset="<?php echo $banner_image['desktop']; ?>" media="(min-width: 768px)">
@@ -13,3 +14,6 @@ $banner_content = get_field('banner_content');
         <h1 class="hero-title"><?= $banner_content["title"]; ?></h1>
     </div>
 </section>
+<?php else : ?>
+<section class="hero-section hero-section-empty"></section>
+<?php endif; ?>

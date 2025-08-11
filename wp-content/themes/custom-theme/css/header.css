@@ -85,17 +85,33 @@
 }
 
 .primary-menu a {
+    position: relative;
     color: var(--main-color);
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 0.5px;
+    transition: var(--transition);
+}
+.primary-menu a::before {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: var(--light-color);
     transition: var(--transition);
 }
 
 .primary-menu a:hover {
     color: var(--muted-color);
+}
+
+.primary-menu a:hover::before {
+    width: 100%;
 }
 
 /* Dropdown Menu Styles */

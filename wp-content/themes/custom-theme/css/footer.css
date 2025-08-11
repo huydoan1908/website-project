@@ -18,6 +18,11 @@
 }
 
 /* Footer Sections */
+.footer-section {
+    border-top: 1px solid var(--muted-color);
+    padding-top: 30px;
+}
+
 .footer-section h3 {
     color: var(--light-color);
     font-size: 18px;

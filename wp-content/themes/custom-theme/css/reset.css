@@ -7,6 +7,39 @@
     font-display: swap;
 }
 
+/* Helvetica Font Family */
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../assets/fonts/Helvetica.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../assets/fonts/Helvetica-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../assets/fonts/Helvetica-Oblique.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../assets/fonts/Helvetica-BoldOblique.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
 /* Reset and Base Styles */
 *, *::before, *::after {
     margin: 0;
@@ -45,6 +78,10 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, d
     vertical-align: baseline;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Helvetica', Arial, sans-serif;
+}
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -77,7 +114,6 @@ button, [type="button"], [type="reset"], [type="submit"] {
 
 img, video {
     max-width: 100%;
-    height: auto;
 }
 
 a {

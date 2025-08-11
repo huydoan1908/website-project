@@ -11,6 +11,10 @@
     color: var(--light-color);
 }
 
+.hero-section-empty {
+    height: 80px;
+}
+
 .hero-background {
     position: absolute;
     top: 0;

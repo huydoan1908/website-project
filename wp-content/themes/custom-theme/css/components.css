@@ -15,7 +15,6 @@
     font-weight: 700;
     color: var(--main-color);
     margin-bottom: var(--spacing-lg);
-    letter-spacing: 0.1em;
     position: relative;
 }
 
@@ -31,8 +30,8 @@
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
+    width: 200px;
+    height: 2px;
     background: linear-gradient(90deg, var(--main-color), var(--accent-color));
 }
 
